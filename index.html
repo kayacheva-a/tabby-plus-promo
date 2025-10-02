@@ -199,15 +199,16 @@
         .hide-toggle-btn {
             background: var(--tabby-violet);
             border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            border-radius: 30px;
+            padding: 15px 25px;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            min-width: 200px;
         }
 
         .hide-toggle-btn:hover {
@@ -226,6 +227,13 @@
 
         .eye-icon.open {
             opacity: 1;
+        }
+
+        .button-text {
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
         }
 
         .comparison-table {
@@ -701,6 +709,7 @@
                     <div class="toggle-container">
                         <button id="hideToggleBtn" class="hide-toggle-btn">
                             <span class="eye-icon closed">👁️</span>
+                            <span class="button-text">I see you, Vita</span>
                         </button>
                     </div>
                     <div class="comparison-table" id="comparisonTable">
