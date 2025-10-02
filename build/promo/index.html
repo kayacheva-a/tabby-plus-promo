@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabby+ Promo - Project Plan</title>
+    
+    <!-- Prevent search engine indexing -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    
+    <!-- Additional privacy measures -->
+    <meta name="referrer" content="no-referrer">
+    <meta name="format-detection" content="telephone=no">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>Tabby+ Project Plan</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="/promo" class="nav-link active">Promo</a>
+                    <a href="/wiki" class="nav-link">Wiki</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Best of Tabby with Tabby+</h1>
+                <p class="hero-subtitle">Get the best of our rewards, debt management features, unlock expense tracking tools and paint your Tabby Card in violet.</p>
+                <a href="#comparison" class="cta-button">Compare Plans</a>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="comparison-section">
+            <div class="section-container">
+                <h2 class="section-title">Compare Plans</h2>
+                
+                <!-- Hide/Show Toggle -->
+                <div class="toggle-container">
+                    <button id="hideToggleBtn" class="hide-toggle-btn">
+                        <span class="eye-icon closed">👁️</span>
+                        <span class="button-text">I see you, Vita</span>
+                    </button>
+                </div>
+
+                <!-- Comparison Table -->
+                <table class="comparison-table" id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Free Plan</th>
+                            <th>Tabby+ (AED 49/month)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Table content will be loaded dynamically from CSV -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="featureModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Feature Details</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="promo.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+TABBY PLANS COMPARISON
+
+OVERVIEW
+
+**FREE PLAN**
+
+INSTALMENT PLANS
+✓ Split in 4 in partner stores (Tabby checkout & Tabby Card)
+✓ Split in 4 in partner stores (Tabbcheckout & Tabby Card)
+✗ Split in 4 in non-partner stores (Paid - Tabby Card)
+✗ Split in 6 anywhere (Paid)
+
+REWARDS
+✗ Cashback Categories Tabby Card (Not available)
+✗ Cashback Categories BNPL (Not available)
+✓ Sales Events Access (Standard access - Tabby Day & Black Friday)
+
+ADVANCED DEBT MANAGEMENT TOOLS
+✓ Full Snooze (Snooze 1 instalment - Tabby checkout)
+✗ Due Date Changes (Not available - Tabby Card)
+✗ Credit Score Reports (Not available)
+
+DELIGHTS
+✓ Card Design (Basic - Tabby Card)
+
+**TABBY+ PLAN (AED 49/MONTH)**
+
+INSTALMENT PLANS
+✓ Split in 4 in partner stores (Free - Tabby checkout & Tabby Card)
+✓ Split in 4 in partner stores (Free - Tabby checkout & Tabby Card)
+✓ Split in 4 in non-partner stores (Free up to 5000 AED/month - Tabby Card)
+✓ Split in 6 anywhere (One "Split in 6" for free at a time)
+
+REWARDS
+✓ Cashback Categories Tabby Card (Pick 3 categories → 5% cashback)
+✓ Cashback Categories BNPL (Tabby Card categories applied → 5% cashback)
+✓ Sales Events Access (Early access - Tabby Day & Black Friday)
+
+ADVANCED DEBT MANAGEMENT TOOLS
+✓ Full Snooze (Snooze all instalments for the same fee - Tabby checkout)
+✓ Due Date Changes (Once a year - Tabby Card)
+✓ Credit Score Reports (Advanced insights)
+
+DELIGHTS
+✓ Card Design (Exclusive design - Tabby Card)
+
+**KEY DIFFERENCES SUMMARY**
+
+FREE PLAN LIMITATIONS:
+• Limited to Split in 4 at partner stores only
+• No cashback rewards
+• Basic snooze functionality (1 instalment only)
+• No due date flexibility
+• No credit score insights
+• Standard card design
+
+TABBY+ ADVANTAGES:
+• Split in 4 anywhere (up to AED 5,000/month free)
+• One free Split in 6 transaction at a time
+• 5% cashback on selected categories
+• Early access to sales events
+• Unlimited snooze on all instalments
+• Annual due date changes
+• Advanced credit score reports with detailed insights
+• Exclusive card design
+
+**FEATURE DETAILS**
+
+SPLIT IN 4 NON-PARTNER STORES (Tabby+ Exclusive)
+
+Past Benefit: Tabby+ allowed OL and CL transactions to be rolled over at 25% repayment with no fee (no limit).
+
+New Design:
+• Free rollover on CL: 25% repayment, no cap
+• Free rollover on OL: 25% repayment capped to AED 5,000 per month
+• Beyond that, OL purchases require full repayment to avoid fees
+
+Why: Controls cost risk while preserving value.
+
+SPLIT IN 6 ANYWHERE (Tabby+ Exclusive)
+
+What: One "Split in 6" transaction at 0% fee, valid in BNPL checkout or post-purchase (BNPL or Card).
+
+Mechanic:
+• Only one Free-6 active at a time
+• Free-6 resets after repayment (early repayment allowed)
+
+Why: Drives engagement with long-term financing.
+
+FULL SNOOZE UPGRADE (Tabby+ Exclusive)
+
+What: Upgrade snooze → Instead of postponing only the next instalment let users snooze all active instalments of the purchase for the same fee.
+
+Mechanic:
+• One active snooze per purchase
+• Reset/re-eligible after entire purchase is repaid
+
+Why: Creates flexible repayment benefit → unique selling point for BNPL.
+
+DUE DATE CHANGES (Tabby+ Exclusive)
+
+What: Users can move the due date for Tabby Card payments. The feature is exclusive to subscription holders but requires an additional fee even for subscribers.
+
+Mechanic:
+• Due date can be moved only once per calendar year per user
+• Date adjustment is permitted only within the same calendar month (from current date up to the last day of the month)
+• The feature is chargeable on top of the subscription fee
+
+CREDIT SCORE REPORTS (Tabby+ Exclusive)
+What: Internal Tabby score is issued quarterly and comes with a report that shows if there were score drops, what influenced them, if there were increases, what influenced them, user's DBR and an attached credit bureau report.
+
+Score Factors:
+• Only formalized actions are listed as affecting the score (for example overdues and DBR for negatives, early repayments, large lump sum repayments, attached salary certificates and connected Lean for positives if they impacted the score)
+• User actions flagged by the risk model as risky or fraudulent but not formalized are not shown
+• Score is linked to Purchase Power and always displayed for subscribed users
