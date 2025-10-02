@@ -1,0 +1,14 @@
+{
+  "name": "tabby-plus-promo",
+  "version": "1.0.0",
+  "description": "Tabby+ subscription promo page with comparison table and wiki",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "build": "echo 'Build complete - files ready for deployment'",
+    "deploy": "echo 'Ready for Cloudflare Pages deployment'"
+  },
+  "keywords": ["tabby", "subscription", "promo", "comparison"],
+  "author": "Tabby Team",
+  "license": "MIT"
+}

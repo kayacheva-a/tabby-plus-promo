@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabby Plans Wiki</title>
+    <style>
+        :root {
+            /* Tabby Brand Colors */
+            --tabby-primary: #00D4AA;
+            --tabby-secondary: #FF6B6B;
+            --tabby-dark: #2C3E50;
+            --tabby-light: #ECF0F1;
+            --tabby-gray: #7F8C8D;
+            --tabby-bg-white: #FFFFFF;
+            --tabby-bg-cream: #FDFCFB;
+            --tabby-light-gray: #E8E8E8;
+            
+            /* Violet/Pink Accent Colors */
+            --tabby-violet-dark: #6B46C1;
+            --tabby-violet-light: #A78BFA;
+            --tabby-pink-dark: #EC4899;
+            --tabby-pink-light: #F9A8D4;
+            --tabby-purple-dark: #7C3AED;
+            --tabby-purple-light: #C4B5FD;
+            
+            /* Status Colors */
+            --tabby-green: #10B981;
+            --tabby-red: #EF4444;
+            --tabby-orange: #F59E0B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--tabby-dark);
+            background: var(--tabby-bg-cream);
+        }
+
+        /* Header */
+        .header {
+            background: var(--tabby-bg-white);
+            border-bottom: 1px solid var(--tabby-light-gray);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--tabby-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--tabby-gray);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--tabby-dark);
+        }
+
+        .nav-link.active {
+            color: var(--tabby-violet-dark);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background: var(--tabby-violet-dark);
+            border-radius: 2px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            margin-top: 80px;
+        }
+
+        .wiki-content {
+            background: white;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .wiki-content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 2rem 0 1rem 0;
+            text-align: center;
+        }
+
+        .wiki-content h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .wiki-content h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 1.2rem 0 0.5rem 0;
+        }
+
+        .wiki-content h4 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .wiki-content p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .wiki-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .wiki-content li {
+            margin: 0.25rem 0;
+        }
+
+
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--tabby-gray);
+        }
+
+        .error {
+            background: #FEF2F2;
+            border: 1px solid #FECACA;
+            color: #DC2626;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .plan-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .wiki-content {
+                padding: 2rem;
+            }
+            
+            .wiki-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Tabby+</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Promo</a></li>
+                    <li><a href="wiki.html" class="nav-link active">Wiki</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="wiki-content">
+            <div class="loading">Loading content...</div>
+        </div>
+    </main>
+
+    <script>
+        // Embedded content from Tabby Plans Description.txt
+        const EMBEDDED_CONTENT = `TABBY PLANS COMPARISON
+
+OVERVIEW
+
+**FREE PLAN**
+
+INSTALMENT PLANS
+✓ Split in 4 in partner stores (Tabby checkout & Tabby Card)
+✓ Split in 4 in partner stores (Tabbcheckout & Tabby Card)
+✗ Split in 4 in non-partner stores (Paid - Tabby Card)
+✗ Split in 6 anywhere (Paid)
+
+REWARDS
+✗ Cashback Categories Tabby Card (Not available)
+✗ Cashback Categories BNPL (Not available)
+✓ Sales Events Access (Standard access - Tabby Day & Black Friday)
+
+ADVANCED DEBT MANAGEMENT TOOLS
+✓ Full Snooze (Snooze 1 instalment - Tabby checkout)
+✗ Due Date Changes (Not available - Tabby Card)
+✗ Credit Score Reports (Not available)
+
+DELIGHTS
+✓ Card Design (Basic - Tabby Card)
+
+**TABBY+ PLAN (AED 49/MONTH)**
+
+INSTALMENT PLANS
+✓ Split in 4 in partner stores (Free - Tabby checkout & Tabby Card)
+✓ Split in 4 in partner stores (Free - Tabby checkout & Tabby Card)
+✓ Split in 4 in non-partner stores (Free up to 5000 AED/month - Tabby Card)
+✓ Split in 6 anywhere (One "Split in 6" for free at a time)
+
+REWARDS
+✓ Cashback Categories Tabby Card (Pick 3 categories → 5% cashback)
+✓ Cashback Categories BNPL (Tabby Card categories applied → 5% cashback)
+✓ Sales Events Access (Early access - Tabby Day & Black Friday)
+
+ADVANCED DEBT MANAGEMENT TOOLS
+✓ Full Snooze (Snooze all instalments for the same fee - Tabby checkout)
+✓ Due Date Changes (Once a year - Tabby Card)
+✓ Credit Score Reports (Advanced insights)
+
+DELIGHTS
+✓ Card Design (Exclusive design - Tabby Card)
+
+**KEY DIFFERENCES SUMMARY**
+
+FREE PLAN LIMITATIONS:
+• Limited to Split in 4 at partner stores only
+• No cashback rewards
+• Basic snooze functionality (1 instalment only)
+• No due date flexibility
+• No credit score insights
+• Standard card design
+
+TABBY+ ADVANTAGES:
+• Split in 4 anywhere (up to AED 5,000/month free)
+• One free Split in 6 transaction at a time
+• 5% cashback on selected categories
+• Early access to sales events
+• Unlimited snooze on all instalments
+• Annual due date changes
+• Advanced credit score reports with detailed insights
+• Exclusive card design
+
+**FEATURE DETAILS**
+
+SPLIT IN 4 NON-PARTNER STORES (Tabby+ Exclusive)
+
+Past Benefit: Tabby+ allowed OL and CL transactions to be rolled over at 25% repayment with no fee (no limit).
+
+New Design:
+• Free rollover on CL: 25% repayment, no cap
+• Free rollover on OL: 25% repayment capped to AED 5,000 per month
+• Beyond that, OL purchases require full repayment to avoid fees
+
+Why: Controls cost risk while preserving value.
+
+SPLIT IN 6 ANYWHERE (Tabby+ Exclusive)
+
+What: One "Split in 6" transaction at 0% fee, valid in BNPL checkout or post-purchase (BNPL or Card).
+
+Mechanic:
+• Only one Free-6 active at a time
+• Free-6 resets after repayment (early repayment allowed)
+
+Why: Drives engagement with long-term financing.
+
+FULL SNOOZE UPGRADE (Tabby+ Exclusive)
+
+What: Upgrade snooze → Instead of postponing only the next instalment let users snooze all active instalments of the purchase for the same fee.
+
+Mechanic:
+• One active snooze per purchase
+• Reset/re-eligible after entire purchase is repaid
+
+Why: Creates flexible repayment benefit → unique selling point for BNPL.
+
+DUE DATE CHANGES (Tabby+ Exclusive)
+
+What: Users can move the due date for Tabby Card payments. The feature is exclusive to subscription holders but requires an additional fee even for subscribers.
+
+Mechanic:
+• Due date can be moved only once per calendar year per user
+• Date adjustment is permitted only within the same calendar month (from current date up to the last day of the month)
+• The feature is chargeable on top of the subscription fee
+
+CREDIT SCORE REPORTS (Tabby+ Exclusive)
+
+What: Internal Tabby score is issued quarterly and comes with a report that shows if there were score drops, what influenced them, if there were increases, what influenced them, user's DBR and an attached credit bureau report.
+
+Score Factors:
+• Only formalized actions are listed as affecting the score (for example overdues and DBR for negatives, early repayments, large lump sum repayments, attached salary certificates and connected Lean for positives if they impacted the score)
+• User actions flagged by the risk model as risky or fraudulent but not formalized are not shown
+• Score is linked to Purchase Power and always displayed for subscribed users`;
+
+        function loadWikiContent() {
+            console.log('Loading wiki content from embedded text...');
+            console.log('EMBEDDED_CONTENT available:', EMBEDDED_CONTENT ? EMBEDDED_CONTENT.length : 'No embedded content');
+            
+            // Try to fetch the latest content from the text file first
+            fetch('./Tabby Plans Description.txt')
+                .then(response => {
+                    console.log('Fetch response:', response.status);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(content => {
+                    console.log('Successfully loaded content from Tabby Plans Description.txt, length:', content.length);
+                    displayContent(content);
+                })
+                .catch(error => {
+                    console.log('Could not load from file, using embedded content:', error.message);
+                    // Use embedded content as fallback
+                    displayContent(EMBEDDED_CONTENT);
+                });
+        }
+        
+        function displayContent(content) {
+            console.log('displayContent called with content length:', content ? content.length : 'No content');
+            const wikiContainer = document.querySelector('.wiki-content');
+            console.log('Wiki container found:', wikiContainer);
+            if (wikiContainer) {
+                const html = parseTextToHTML(content);
+                console.log('Generated HTML length:', html.length);
+                console.log('HTML preview:', html.substring(0, 200));
+                wikiContainer.innerHTML = html;
+                console.log('Wiki content updated successfully');
+            } else {
+                console.error('Wiki container not found!');
+            }
+        }
+        
+        function parseTextToHTML(text) {
+            const lines = text.split('\n');
+            let html = '';
+            let inPlanSection = false;
+            let inLimitations = false;
+            let inAdvantages = false;
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                
+                if (line === 'TABBY PLANS COMPARISON') {
+                    html += '<h1>Tabby Plans Comparison</h1>';
+                } else if (line === 'OVERVIEW') {
+                    html += '<h2>Overview</h2>';
+                } else if (line === '**FREE PLAN**') {
+                    html += '<h2>Free Plan</h2>';
+                    inPlanSection = true;
+                } else if (line === '**TABBY+ PLAN (AED 49/MONTH)**') {
+                    html += '<h2>Tabby+ Plan (AED 49/month)</h2>';
+                } else if (line === '**KEY DIFFERENCES SUMMARY**') {
+                    html += '<h2>Key Differences Summary</h2>';
+                    inPlanSection = false;
+                } else if (line === '**FEATURE DETAILS**') {
+                    html += '<h2>Feature Details</h2>';
+                } else if (line === 'INSTALMENT PLANS' || line === 'REWARDS' || line === 'ADVANCED DEBT MANAGEMENT TOOLS' || line === 'DELIGHTS') {
+                    if (inPlanSection) {
+                        html += `<h4>${line}</h4>`;
+                    } else {
+                        html += `<h3>${line}</h3>`;
+                    }
+                } else if (line.startsWith('✓') || line.startsWith('✗')) {
+                    const featureText = line.substring(1).trim();
+                    html += `<li>${line}</li>`;
+                } else if (line.startsWith('•')) {
+                    html += `<li>${line.substring(1).trim()}</li>`;
+                } else if (line.startsWith('FREE PLAN LIMITATIONS:')) {
+                    html += '<h3>Free Plan Limitations</h3><ul>';
+                    inLimitations = true;
+                } else if (line.startsWith('TABBY+ ADVANTAGES:')) {
+                    html += '</ul><h3>Tabby+ Advantages</h3><ul>';
+                    inLimitations = false;
+                    inAdvantages = true;
+                } else if (line.startsWith('SPLIT IN') || line.startsWith('FULL SNOOZE') || line.startsWith('DUE DATE') || line.startsWith('CREDIT SCORE')) {
+                    if (inAdvantages) {
+                        html += '</ul>';
+                        inAdvantages = false;
+                    }
+                    html += `<h3>${line}</h3>`;
+                } else if (line.startsWith('Past Benefit:') || line.startsWith('New Design:') || line.startsWith('What:') || line.startsWith('Mechanic:') || line.startsWith('Why:') || line.startsWith('Score Factors:')) {
+                    const parts = line.split(':');
+                    if (parts.length > 1) {
+                        html += `<p><strong>${parts[0]}:</strong> ${parts.slice(1).join(':').trim()}</p>`;
+                    }
+                } else if (line && !line.startsWith('=') && !line.startsWith('-') && line !== '') {
+                    // Regular paragraph text
+                    if (line.includes('Tabby offers two distinct plans')) {
+                        html += `<p>${line}</p>`;
+                    } else if (!line.startsWith('**') && !line.startsWith('TABBY') && !line.startsWith('OVERVIEW') && !line.startsWith('KEY') && !line.startsWith('FEATURE')) {
+                        html += `<p>${line}</p>`;
+                    }
+                }
+            }
+            
+            // Close any open tags
+            if (inAdvantages) {
+                html += '</ul></div>';
+            }
+            if (inPlanSection) {
+                html += '</div></div>';
+            }
+            
+            return html;
+        }
+
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded fired for wiki page');
+            loadWikiContent();
+        });
+    </script>
+</body>
+</html>

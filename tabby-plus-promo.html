@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabby+ - Best of Tabby with Tabby+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Tabby Complete Color Palette with Violet/Pink Focus */
+            --tabby-dark: #131C26;
+            --tabby-gray: #7F90A3;
+            --tabby-light-gray: #D1D9E0;
+            
+            /* Background Colors */
+            --tabby-bg-dark: #11151A;
+            --tabby-bg-medium: #1D2329;
+            --tabby-bg-light: #2C3540;
+            --tabby-bg-lighter: #3E4A59;
+            --tabby-bg-lightest: #546170;
+            --tabby-bg-pale: #7F8B99;
+            --tabby-bg-very-pale: #B8C3D1;
+            --tabby-bg-off-white: #D8E0EB;
+            --tabby-bg-white: #E9EFF5;
+            --tabby-bg-cream: #F2F5F7;
+            
+            /* Violet/Pink Brand Colors */
+            --tabby-violet: #8B5CF6;
+            --tabby-violet-light: #A78BFA;
+            --tabby-violet-dark: #7C3AED;
+            --tabby-pink: #EC4899;
+            --tabby-pink-light: #F472B6;
+            --tabby-pink-dark: #DB2777;
+            --tabby-purple: #9333EA;
+            --tabby-purple-light: #A855F7;
+            
+            /* Accent Colors */
+            --tabby-green: #00A645;
+            --tabby-red-bright: #CC0836;
+            --tabby-red-light: #E81E40;
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--tabby-bg-cream);
+            color: var(--tabby-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--tabby-violet) 0%, var(--tabby-pink) 50%, var(--tabby-purple) 100%);
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            margin-bottom: 2rem;
+            padding: 4rem 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem 0;
+        }
+
+        .hero-text {
+            color: white;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--tabby-violet);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--tabby-violet);
+        }
+
+
+
+        /* Plans Section */
+        .plans-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--tabby-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--tabby-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan-card.free {
+            border: 2px solid var(--tabby-light-gray);
+        }
+
+        .plan-card.premium {
+            border: 2px solid var(--tabby-violet);
+            background: linear-gradient(135deg, white 0%, rgba(139, 92, 246, 0.05) 100%);
+        }
+
+        .plan-card.premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--tabby-violet) 0%, var(--tabby-pink) 100%);
+        }
+
+        .plan-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-name.free {
+            color: var(--tabby-gray);
+        }
+
+        .plan-name.premium {
+            background: linear-gradient(135deg, var(--tabby-violet) 0%, var(--tabby-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price.free {
+            color: var(--tabby-gray);
+        }
+
+        .plan-price.premium {
+            background: linear-gradient(135deg, var(--tabby-violet) 0%, var(--tabby-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .plan-period {
+            color: var(--tabby-gray);
+            font-size: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .plan-feature::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .plan-card.free .plan-feature::before {
+            background: var(--tabby-light-gray);
+            color: white;
+        }
+
+        .plan-card.premium .plan-feature::before {
+            background: linear-gradient(135deg, var(--tabby-violet) 0%, var(--tabby-pink) 100%);
+            color: white;
+        }
+
+        .plan-cta {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .plan-cta.free {
+            background: var(--tabby-bg-off-white);
+            color: var(--tabby-gray);
+            border: 2px solid var(--tabby-light-gray);
+        }
+
+        .plan-cta.premium {
+            background: linear-gradient(135deg, var(--tabby-violet) 0%, var(--tabby-pink) 100%);
+            color: white;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+        }
+
+        .plan-cta.premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--tabby-bg-cream);
+            padding: 6rem 0;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table th:first-child {
+            background: var(--tabby-dark);
+        }
+
+        .comparison-table th:nth-child(2) {
+            background: var(--tabby-gray);
+        }
+
+        .comparison-table th:nth-child(3) {
+            background: var(--tabby-violet-dark);
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--tabby-bg-off-white);
+            vertical-align: top;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--tabby-bg-cream);
+        }
+
+        .feature-category {
+            font-weight: 700;
+            color: var(--tabby-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-name {
+            font-weight: 600;
+            color: var(--tabby-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-subline {
+            font-size: 0.85rem;
+            color: var(--tabby-gray);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .free-text {
+            color: #00A645;
+            font-weight: 600;
+        }
+
+        .paid-text {
+            color: #DC2626;
+            font-weight: 600;
+        }
+        
+        .basic-text {
+            color: #EA580C;
+            font-weight: 600;
+        }
+        
+        .not-available-text {
+            color: #EA580C;
+            font-weight: 600;
+        }
+
+        /* Tabs Styling */
+        .tabs-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--tabby-light-gray);
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .tabs-nav {
+            display: flex;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--tabby-gray);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--tabby-dark);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .tab-btn.active {
+            color: var(--tabby-violet-dark);
+            border-bottom-color: var(--tabby-violet-dark);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .tab-content {
+            min-height: 60vh;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .description-content {
+            background: var(--tabby-bg-white);
+            padding: 3rem 0;
+        }
+
+        .description-text {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--tabby-dark);
+            white-space: pre-line;
+            overflow-x: auto;
+        }
+
+        .feature-item {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-free {
+            color: var(--tabby-gray);
+        }
+
+        .feature-premium {
+            background: var(--tabby-bg-cream);
+            color: var(--tabby-dark);
+            font-weight: 600;
+            padding: 1rem;
+        }
+
+        .highlight {
+            color: var(--tabby-dark);
+            font-weight: 600;
+        }
+
+        /* Column Selection Animation */
+        .comparison-table th {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-table th:hover {
+            opacity: 0.8;
+        }
+
+        .comparison-table.free-selected .feature-free {
+            background: rgba(248, 250, 252, 0.5);
+            color: var(--tabby-dark);
+            position: relative;
+        }
+
+        .comparison-table.free-selected .feature-free::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: linear-gradient(135deg, var(--tabby-violet) 0%, var(--tabby-pink) 100%);
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        .comparison-table.free-selected .feature-free::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            background: rgba(248, 250, 252, 0.5);
+            border-radius: 6px;
+            z-index: -1;
+        }
+
+        .comparison-table.plus-selected .feature-premium {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--tabby-dark);
+            position: relative;
+        }
+
+        .comparison-table.plus-selected .feature-premium::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: linear-gradient(135deg, var(--tabby-violet) 0%, var(--tabby-pink) 100%);
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        .comparison-table.plus-selected .feature-premium::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 6px;
+            z-index: -1;
+        }
+
+        /* Pulsing animation for cells with modals */
+        .cell-with-modal {
+            position: relative;
+            animation: pulseGradient 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGradient {
+            0%, 100% {
+                background: rgba(139, 92, 246, 0.05);
+            }
+            50% {
+                background: rgba(139, 92, 246, 0.15);
+            }
+        }
+
+        .cell-with-modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border-radius: 4px;
+            opacity: 0.3;
+            animation: pulseGradient 3s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: absolute;
+            z-index: 1000;
+            background-color: transparent;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 0;
+            border-radius: 15px;
+            width: 800px;
+            max-width: 90vw;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+            border: 1px solid var(--tabby-light-gray);
+        }
+
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: var(--arrow-top, 50%);
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid white;
+            z-index: 1001;
+        }
+
+        .modal-content::after {
+            content: '';
+            position: absolute;
+            right: -11px;
+            top: var(--arrow-top, 50%);
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            border-left: 16px solid var(--tabby-light-gray);
+            z-index: 1000;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: var(--tabby-gray);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            background: var(--tabby-bg-cream);
+            color: var(--tabby-dark);
+        }
+
+        .modal-header {
+            background: var(--tabby-bg-cream);
+            color: var(--tabby-dark);
+            padding: 1.5rem;
+            border-radius: 15px 15px 0 0;
+            border-bottom: 1px solid var(--tabby-light-gray);
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            color: var(--tabby-dark);
+            line-height: 1.6;
+        }
+
+        .modal-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: var(--tabby-violet);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 0.75rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--tabby-bg-cream);
+        }
+
+        .section-content {
+            margin: 0;
+            color: var(--tabby-dark);
+            line-height: 1.5;
+        }
+
+        .feature-list {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            list-style: disc;
+        }
+
+        .feature-item {
+            margin: 0.5rem 0;
+            color: var(--tabby-dark);
+            line-height: 1.5;
+        }
+
+        .feature-item:first-child {
+            margin-top: 0;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--tabby-violet) 0%, var(--tabby-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 30vh;
+                padding: 3rem 0;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .plan-card {
+                padding: 1.5rem;
+            }
+
+            .plan-price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Best of Tabby with Tabby+</h1>
+                    <p class="hero-subtitle">Get the best of our rewards, debt management features, unlock expense tracking tools and paint your Tabby Card in violet.</p>
+                    <div class="hero-cta">
+                        <a href="#compare" class="btn-primary">Compare Plans</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tabs Navigation -->
+        <div class="tabs-container">
+            <div class="container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="promo">Promo</button>
+                    <button class="tab-btn" data-tab="description">Description</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+        <!-- Promo Tab -->
+        <div class="tab-panel active" id="promo-tab">
+    <section class="comparison-section" id="compare">
+        <div class="container">
+            <div class="comparison-table" id="comparisonTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Features</th>
+                            <th style="width: 30%;">Free Plan</th>
+                            <th style="width: 30%;">Tabby+ (AED 49/month)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3" style="background: var(--tabby-bg-white); font-weight: 700; color: var(--tabby-dark); padding: 1rem;">Instalment Plans</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Split in 4 in partner stores</div>
+                                <div class="feature-subline">Tabby checkout & Tabby Card</div>
+                            </td>
+                            <td class="feature-free"><span class="free-text">Free ✓</span></td>
+                            <td class="feature-premium"><span class="free-text">Free ✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Split in 4 in non-partner stores</div>
+                                <div class="feature-subline">Tabby Card</div>
+                            </td>
+                            <td class="feature-free"><span class="paid-text">Paid ✗</span></td>
+                            <td class="feature-premium cell-with-modal"><span class="highlight">Free (up to 5000 AED/month)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Split in 6 anywhere</div>
+                                <div class="feature-subline">Tabby checkout and in-app & Tabby Card</div>
+                            </td>
+                            <td class="feature-free"><span class="paid-text">Paid ✗</span></td>
+                            <td class="feature-premium cell-with-modal"><span class="highlight">One "Split in 6" for free at a time</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="3" style="background: var(--tabby-bg-white); font-weight: 700; color: var(--tabby-dark); padding: 1rem;">Rewards</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Cashback Categories Tabby Card</div>
+                                <div class="feature-subline">Tabby Card</div>
+                            </td>
+                            <td class="feature-free"><span class="not-available-text">Not available</span></td>
+                            <td class="feature-premium"><span class="highlight">Pick 3 categories → 5% cashback</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Cashback Categories BNPL</div>
+                                <div class="feature-subline">Tabby checkout</div>
+                            </td>
+                            <td class="feature-free"><span class="not-available-text">Not available</span></td>
+                            <td class="feature-premium"><span class="highlight">Tabby Card categories applied → 5% cashback</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Sales Events Access</div>
+                                <div class="feature-subline">Tabby Day & Black Friday</div>
+                            </td>
+                            <td class="feature-free">Standard access</td>
+                            <td class="feature-premium"><span class="highlight">Early access</span></td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="3" style="background: var(--tabby-bg-white); font-weight: 700; color: var(--tabby-dark); padding: 1rem;">Advanced debt management tools</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Full Snooze</div>
+                                <div class="feature-subline">Tabby checkout</div>
+                            </td>
+                            <td class="feature-free">Snooze 1 instalment</td>
+                            <td class="feature-premium cell-with-modal"><span class="highlight">Snooze all instalments for the same fee</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Due Date Changes</div>
+                                <div class="feature-subline">Tabby Card</div>
+                            </td>
+                            <td class="feature-free"><span class="not-available-text">Not available</span></td>
+                            <td class="feature-premium cell-with-modal"><span class="highlight">Once a year</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Credit Score Reports</div>
+                            </td>
+                            <td class="feature-free"><span class="not-available-text">Not available</span></td>
+                            <td class="feature-premium cell-with-modal"><span class="highlight">Advanced insights</span></td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td colspan="3" style="background: var(--tabby-bg-white); font-weight: 700; color: var(--tabby-dark); padding: 1rem;">Delights</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-category">
+                                <div class="feature-name">Card Design</div>
+                                <div class="feature-subline">Tabby Card</div>
+                            </td>
+                            <td class="feature-free"><span class="basic-text">Basic</span></td>
+                            <td class="feature-premium"><span class="highlight">Exclusive design</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+        </div>
+
+        <!-- Description Tab -->
+        <div class="tab-panel" id="description-tab">
+            <div class="description-content">
+                <div class="container">
+                    <div class="description-text">
+TABBY PLANS COMPARISON
+=====================
+
+OVERVIEW
+--------
+Tabby offers two distinct plans to meet different customer needs: a comprehensive Free Plan and an enhanced Tabby+ subscription plan at AED 49/month. Both plans provide core Tabby functionality while Tabby+ unlocks advanced features for power users.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FREE PLAN
+=========
+
+The Free Plan provides essential Tabby functionality at no cost, making financial flexibility accessible to everyone.
+
+INSTALMENT PLANS
+----------------
+✓ Split in 4 in partner stores (Tabby checkout & Tabby Card)
+✓ Split in 4 in partner stores (Tabby checkout & Tabby Card)
+✗ Split in 4 in non-partner stores (Paid - Tabby Card)
+✗ Split in 6 anywhere (Paid)
+
+REWARDS
+-------
+✗ Cashback Categories Tabby Card (Not available)
+✗ Cashback Categories BNPL (Not available)
+✓ Sales Events Access (Standard access - Tabby Day & Black Friday)
+
+ADVANCED DEBT MANAGEMENT TOOLS
+-------------------------------
+✓ Full Snooze (Snooze 1 instalment - Tabby checkout)
+✗ Due Date Changes (Not available - Tabby Card)
+✗ Credit Score Reports (Not available)
+
+DELIGHTS
+--------
+✓ Card Design (Basic - Tabby Card)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TABBY+ PLAN (AED 49/MONTH)
+===========================
+
+The Tabby+ subscription unlocks premium features, advanced analytics, and exclusive benefits for users who want maximum value from their Tabby experience.
+
+INSTALMENT PLANS
+----------------
+✓ Split in 4 in partner stores (Free - Tabby checkout & Tabby Card)
+✓ Split in 4 in partner stores (Free - Tabby checkout & Tabby Card)
+✓ Split in 4 in non-partner stores (Free up to 5000 AED/month - Tabby Card)
+✓ Split in 6 anywhere (One "Split in 6" for free at a time)
+
+REWARDS
+-------
+✓ Cashback Categories Tabby Card (Pick 3 categories → 5% cashback)
+✓ Cashback Categories BNPL (Tabby Card categories applied → 5% cashback)
+✓ Sales Events Access (Early access - Tabby Day & Black Friday)
+
+ADVANCED DEBT MANAGEMENT TOOLS
+-------------------------------
+✓ Full Snooze (Snooze all instalments for the same fee - Tabby checkout)
+✓ Due Date Changes (Once a year - Tabby Card)
+✓ Credit Score Reports (Advanced insights)
+
+DELIGHTS
+--------
+✓ Card Design (Exclusive design - Tabby Card)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+KEY DIFFERENCES SUMMARY
+========================
+
+FREE PLAN LIMITATIONS:
+• Limited to Split in 4 at partner stores only
+• No cashback rewards
+• Basic snooze functionality (1 instalment only)
+• No due date flexibility
+• No credit score insights
+• Standard card design
+
+TABBY+ ADVANTAGES:
+• Split in 4 anywhere (up to AED 5,000/month free)
+• One free Split in 6 transaction at a time
+• 5% cashback on selected categories
+• Early access to sales events
+• Unlimited snooze on all instalments
+• Annual due date changes
+• Advanced credit score reports with detailed insights
+• Exclusive card design
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FEATURE DETAILS
+===============
+
+SPLIT IN 4 NON-PARTNER STORES (Tabby+ Exclusive)
+-------------------------------------------------
+Past Benefit: Tabby+ allowed OL and CL transactions to be rolled over at 25% repayment with no fee (no limit).
+
+New Design:
+• Free rollover on CL: 25% repayment, no cap
+• Free rollover on OL: 25% repayment capped to AED 5,000 per month
+• Beyond that, OL purchases require full repayment to avoid fees
+
+Why: Controls cost risk while preserving value.
+
+SPLIT IN 6 ANYWHERE (Tabby+ Exclusive)
+---------------------------------------
+What: One "Split in 6" transaction at 0% fee, valid in BNPL checkout or post-purchase (BNPL or Card).
+
+Mechanic:
+• Only one Free-6 active at a time
+• Free-6 resets after repayment (early repayment allowed)
+
+Why: Drives engagement with long-term financing.
+
+FULL SNOOZE UPGRADE (Tabby+ Exclusive)
+---------------------------------------
+What: Upgrade snooze → Instead of postponing only the next instalment let users snooze all active instalments of the purchase for the same fee.
+
+Mechanic:
+• One active snooze per purchase
+• Reset/re-eligible after entire purchase is repaid
+
+Why: Creates flexible repayment benefit → unique selling point for BNPL.
+
+DUE DATE CHANGES (Tabby+ Exclusive)
+-----------------------------------
+What: Users can move the due date for Tabby Card payments. The feature is exclusive to subscription holders but requires an additional fee even for subscribers.
+
+Mechanic:
+• Due date can be moved only once per calendar year per user
+• Date adjustment is permitted only within the same calendar month (from current date up to the last day of the month)
+• The feature is chargeable on top of the subscription fee
+
+CREDIT SCORE REPORTS (Tabby+ Exclusive)
+---------------------------------------
+What: Internal Tabby score is issued quarterly and comes with a report that shows if there were score drops, what influenced them, if there were increases, what influenced them, user's DBR and an attached credit bureau report.
+
+Score Factors:
+• Only formalized actions are listed as affecting the score (for example overdues and DBR for negatives, early repayments, large lump sum repayments, attached salary certificates and connected Lean for positives if they impacted the score)
+• User actions flagged by the risk model as risky or fraudulent but not formalized are not shown
+• Score is linked to Purchase Power and always displayed for subscribed users
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TARGET AUDIENCES
+================
+
+FREE PLAN IDEAL FOR:
+• New Tabby users exploring the platform
+• Occasional shoppers who primarily use partner stores
+• Users who prefer simple, straightforward financial tools
+• Budget-conscious consumers
+
+TABBY+ IDEAL FOR:
+• Frequent online shoppers across various merchants
+• Users who want maximum payment flexibility
+• Customers seeking cashback rewards and early access benefits
+• People who need advanced financial management tools
+• Users who value detailed credit insights and reporting
+
+═══════════════════════════════════════════════════════════════════════════════
+
+VALUE PROPOSITION
+=================
+
+FREE PLAN VALUE:
+• Zero cost access to core Tabby functionality
+• Split payments at partner stores
+• Basic financial management tools
+• Perfect entry point for new users
+
+TABBY+ VALUE (AED 49/month):
+• Unlimited Split in 4 flexibility (up to AED 5,000/month)
+• Free Split in 6 transactions
+• 5% cashback rewards
+• Advanced debt management tools
+• Credit score insights and reporting
+• Early access to exclusive sales events
+• Premium card design
+• Comprehensive financial analytics
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CONCLUSION
+==========
+
+Tabby's dual-plan structure ensures accessibility for all users while providing premium features for those who need advanced financial management capabilities. The Free Plan serves as an excellent introduction to Tabby's core benefits, while Tabby+ delivers comprehensive value for power users seeking maximum flexibility, rewards, and financial insights.
+
+The clear differentiation between plans allows customers to choose the option that best fits their shopping habits, financial needs, and budget preferences, ensuring Tabby remains accessible while offering compelling reasons to upgrade for enhanced functionality.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="featureModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h3 id="modalTitle">Feature Details</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and panels
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding panel
+                    button.classList.add('active');
+                    document.getElementById(targetTab + '-tab').classList.add('active');
+                });
+            });
+
+            const table = document.getElementById('comparisonTable');
+            const headers = document.querySelectorAll('.comparison-table th');
+            const modal = document.getElementById('featureModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            const closeBtn = document.querySelector('.close');
+            
+            // Column selection functionality
+            headers.forEach((header, index) => {
+                if (index === 1) { // Free Plan column
+                    header.addEventListener('click', function() {
+                        table.classList.remove('plus-selected');
+                        table.classList.add('free-selected');
+                    });
+                } else if (index === 2) { // Tabby+ column
+                    header.addEventListener('click', function() {
+                        table.classList.remove('free-selected');
+                        table.classList.add('plus-selected');
+                    });
+                }
+            });
+
+            // Modal functionality
+            const cells = document.querySelectorAll('.comparison-table td');
+            
+            cells.forEach((cell, index) => {
+                cell.style.cursor = 'pointer';
+                const cellText = cell.textContent.trim();
+                
+                cell.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    // Get the feature name from the first column of the same row
+                    const row = cell.closest('tr');
+                    const featureNameCell = row.querySelector('.feature-name');
+                    const featureName = featureNameCell ? featureNameCell.textContent.trim() : '';
+                    
+                    // Position modal so arrow points to the clicked cell
+                    const rect = cell.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+                    
+                    // Calculate modal position so the arrow points to the cell
+                    const modalWidth = 800; // Same as CSS width
+                    const arrowOffset = 20; // Distance from modal edge to arrow
+                    const modalLeft = rect.left - modalWidth - arrowOffset;
+                    
+                    // Ensure modal doesn't go off screen
+                    const finalLeft = Math.max(10, Math.min(modalLeft, window.innerWidth - modalWidth - 10));
+                    
+                    // Calculate arrow position relative to the cell
+                    const cellCenterY = rect.top + (rect.height / 2);
+                    const modalTop = cellCenterY - 150; // Start with modal top at cell center minus half modal height
+                    
+                    // Position modal
+                    modal.style.position = 'absolute';
+                    modal.style.left = (finalLeft + scrollLeft) + 'px';
+                    modal.style.top = (modalTop + scrollTop) + 'px';
+                    modal.style.display = 'block';
+                    
+                    // Calculate arrow position to point at the cell
+                    const modalRect = modal.getBoundingClientRect();
+                    const arrowTop = cellCenterY - modalRect.top;
+                    
+                    // Set arrow position dynamically
+                    const modalContent = modal.querySelector('.modal-content');
+                    modalContent.style.setProperty('--arrow-top', arrowTop + 'px');
+                    
+                    // Check if this is any Split in cell
+                    if (featureName.includes('Split in 4') && featureName.includes('non-partner')) {
+                        modalTitle.textContent = cellText;
+                        modalBody.innerHTML = `
+                            <div class="modal-section">
+                                <h4 class="section-title">Past Benefit</h4>
+                                <p class="section-content">Tabby+ allowed OL and CL transactions to be rolled over at 25% repayment with no fee (no limit).</p>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">New Design</h4>
+                                <ul class="feature-list">
+                                    <li class="feature-item">Free rollover on CL: 25% repayment, <span class="highlight-text">no cap</span>.</li>
+                                    <li class="feature-item">Free rollover on OL: 25% repayment capped to <span class="highlight-text">AED 5,000 per month</span>. Beyond that, OL purchases require full repayment to avoid fees.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">Why</h4>
+                                <p class="section-content">Controls cost risk while preserving value.</p>
+                            </div>
+                        `;
+                    } else if (featureName.includes('Split in 6')) {
+                        modalTitle.textContent = cellText;
+                        modalBody.innerHTML = `
+                            <div class="modal-section">
+                                <h4 class="section-title">What</h4>
+                                <p class="section-content">One "Split in 6" transaction at 0% fee, valid in BNPL checkout or post-purchase (BNPL or Card).</p>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">Mechanic</h4>
+                                <ul class="feature-list">
+                                    <li class="feature-item">Only one Free-6 active at a time.</li>
+                                    <li class="feature-item">Free-6 resets after repayment (early repayment allowed).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">Why</h4>
+                                <p class="section-content">Drives engagement with long-term financing.</p>
+                            </div>
+                        `;
+                    } else if (featureName.includes('Full Snooze')) {
+                        modalTitle.textContent = cellText;
+                        modalBody.innerHTML = `
+                            <div class="modal-section">
+                                <h4 class="section-title">What</h4>
+                                <p class="section-content">Upgrade snooze → Instead of postponing only the next instalment let users snooze <span class="highlight-text">all active instalments of the purchase</span> for the same fee.</p>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">Mechanic</h4>
+                                <p class="section-content">One active snooze per purchase. Reset/re-eligible after entire purchase is repaid.</p>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">Why</h4>
+                                <p class="section-content">Creates flexible repayment benefit → unique selling point for BNPL.</p>
+                            </div>
+                        `;
+                    } else if (featureName.includes('Due Date Changes')) {
+                        modalTitle.textContent = cellText;
+                        modalBody.innerHTML = `
+                            <div class="modal-section">
+                                <h4 class="section-title">What</h4>
+                                <p class="section-content">Users can move the due date for Tabby Card payments. The feature is exclusive to subscription holders but requires an additional fee even for subscribers.</p>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">Mechanic</h4>
+                                <p class="section-content">Due date can be moved only once per calendar year per user. Date adjustment is permitted only within the same calendar month (from current date up to the last day of the month). The feature is chargeable on top of the subscription fee.</p>
+                            </div>
+                        `;
+                    } else if (featureName.includes('Credit Score Reports')) {
+                        modalTitle.textContent = cellText;
+                        modalBody.innerHTML = `
+                            <div class="modal-section">
+                                <h4 class="section-title">What</h4>
+                                <p class="section-content">Internal Tabby score is issued quarterly and comes with a report that shows if there were score drops, what influenced them, if there were increases, what influenced them, user's DBR and an attached credit bureau report.</p>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">Score Factors</h4>
+                                <p class="section-content">Only formalized actions are listed as affecting the score (for example overdues and DBR for negatives, early repayments, large lump sum repayments, attached salary certificates and connected Lean for positives if they impacted the score). User actions flagged by the risk model as risky or fraudulent but not formalized are not shown. Score is linked to Purchase Power and always displayed for subscribed users.</p>
+                            </div>
+                        `;
+                    } else {
+                        // For other cells, show basic info
+                        modalTitle.textContent = cellText;
+                        modalBody.innerHTML = `
+                            <div class="modal-section">
+                                <h4 class="section-title">Past Benefit</h4>
+                                <p class="section-content">Tabby+ allowed OL and CL transactions to be rolled over at 25% repayment with no fee (no limit).</p>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">New Design</h4>
+                                <ul class="feature-list">
+                                    <li class="feature-item">Free rollover on CL: 25% repayment, <span class="highlight-text">no cap</span>.</li>
+                                    <li class="feature-item">Free rollover on OL: 25% repayment capped to <span class="highlight-text">AED 5,000 per month</span>. Beyond that, OL purchases require full repayment to avoid fees.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="modal-section">
+                                <h4 class="section-title">Why</h4>
+                                <p class="section-content">Controls cost risk while preserving value.</p>
+                            </div>
+                            
+                        `;
+                    }
+                });
+            });
+
+            // Close modal functionality
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            document.addEventListener('click', function(event) {
+                // Check if click is outside the modal content
+                if (modal.style.display === 'block' && 
+                    !modal.contains(event.target) && 
+                    !event.target.closest('.comparison-table td')) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
