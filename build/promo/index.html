@@ -22,7 +22,7 @@
         <nav class="main-nav">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <h1>Tabby+ Project Plan</h1>
+                    <h1>Tabby+ Vision</h1>
                 </div>
                 <div class="nav-links">
                     <a href="/promo" class="nav-link active">Promo</a>
@@ -39,36 +39,56 @@
             <div class="hero-content">
                 <h1 class="hero-title">Best of Tabby with Tabby+</h1>
                 <p class="hero-subtitle">Get the best of our rewards, debt management features, unlock expense tracking tools and paint your Tabby Card in violet.</p>
-                <a href="#comparison" class="cta-button">Compare Plans</a>
+                <div class="hero-buttons">
+                    <button class="cta-button country-btn active" data-country="uae">UAE Plans</button>
+                    <button class="cta-button country-btn" data-country="ksa">KSA Plans</button>
+                </div>
             </div>
         </section>
 
         <!-- Comparison Section -->
         <section id="comparison" class="comparison-section">
             <div class="section-container">
-                <h2 class="section-title">Compare Plans</h2>
-                
                 <!-- Hide/Show Toggle -->
                 <div class="toggle-container">
-                    <button id="hideToggleBtn" class="hide-toggle-btn">
-                        <span class="eye-icon closed">👁️</span>
-                        <span class="button-text">I see you, Vita</span>
-                    </button>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="hideToggleBtn">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-text">Non-MVP</span>
+                    </label>
+                </div>
+                
+                <!-- UAE Comparison Table -->
+                <div class="table-container" id="uaeTable">
+                    <table class="comparison-table" id="comparisonTableUAE">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Free Plan</th>
+                                <th>Tabby+ (AED 49/month)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBodyUAE">
+                            <!-- Table content will be loaded dynamically from CSV -->
+                        </tbody>
+                    </table>
                 </div>
 
-                <!-- Comparison Table -->
-                <table class="comparison-table" id="comparisonTable">
-                    <thead>
-                        <tr>
-                            <th>Features</th>
-                            <th>Free Plan</th>
-                            <th>Tabby+ (AED 49/month)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <!-- Table content will be loaded dynamically from CSV -->
-                    </tbody>
-                </table>
+                <!-- KSA Comparison Table -->
+                <div class="table-container" id="ksaTable" style="display: none;">
+                    <table class="comparison-table" id="comparisonTableKSA">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Free Plan</th>
+                                <th>Tabby+ (AED 49/month)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBodyKSA">
+                            <!-- Table content will be loaded dynamically from CSV -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
     </main>
@@ -86,6 +106,6 @@
         </div>
     </div>
 
-    <script src="promo.js"></script>
+    <script src="simple.js"></script>
 </body>
 </html>
