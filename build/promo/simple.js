@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadAndPopulateTables() {
     try {
         console.log('Loading UAE CSV...');
-        const responseUAE = await fetch('./comparison-uae.csv?v=5');
+        const responseUAE = await fetch('./comparison-uae.csv?v=6');
         const csvTextUAE = await responseUAE.text();
         console.log('UAE CSV loaded, length:', csvTextUAE.length);
         
         console.log('Loading KSA CSV...');
-        const responseKSA = await fetch('./comparison-ksa.csv?v=5');
+        const responseKSA = await fetch('./comparison-ksa.csv?v=6');
         const csvTextKSA = await responseKSA.text();
         console.log('KSA CSV loaded, length:', csvTextKSA.length);
         
