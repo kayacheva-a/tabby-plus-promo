@@ -1,0 +1,3 @@
+# Cloudflare Pages configuration
+# Serve from build directory
+/* /build/:splat 200
