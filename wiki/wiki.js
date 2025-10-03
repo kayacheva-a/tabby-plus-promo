@@ -1,7 +1,7 @@
 // Load wiki content from TXT file
 async function loadWikiContent() {
     try {
-        const response = await fetch('./Tabby Plans Description.txt?v=3');
+        const response = await fetch('./Tabby Plans Description.txt?v=5');
         const content = await response.text();
         console.log('Wiki content loaded successfully');
         displayContent(content);
