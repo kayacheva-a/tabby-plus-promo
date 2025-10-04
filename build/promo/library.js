@@ -408,7 +408,7 @@ async function updateCSVFile() {
         });
 
         // Call GitHub API via Cloudflare Worker
-        const response = await fetch('https://tabby-csv-updater.kayacheva-a.workers.dev/', {
+        const response = await fetch('https://tabby-csv-updater.anastasiia-kaiacheva.workers.dev/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
