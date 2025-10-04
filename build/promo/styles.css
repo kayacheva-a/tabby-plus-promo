@@ -209,6 +209,14 @@ body {
     background: white;
 }
 
+.table-title {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--tabby-dark);
+    margin: 0 0 2rem 0;
+}
+
 .section-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -221,56 +229,6 @@ body {
     margin-bottom: 3rem;
     color: var(--tabby-dark);
 }
-
-/* Hide/Show Toggle */
-.toggle-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.hide-toggle-btn {
-    background: var(--tabby-violet);
-    border: none;
-    border-radius: 30px;
-    padding: 15px 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-    min-width: 200px;
-    color: white;
-}
-
-.hide-toggle-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
-}
-
-.eye-icon {
-    font-size: 24px;
-    transition: all 0.3s ease;
-}
-
-.eye-icon.closed {
-    opacity: 0.7;
-}
-
-.eye-icon.open {
-    opacity: 1;
-}
-
-.button-text {
-    color: rgba(139, 92, 246, 0.4) !important;
-    font-weight: 600;
-    font-size: 16px;
-    white-space: nowrap;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
 
 /* Hide/Show Toggle */
 .toggle-container {
@@ -418,26 +376,6 @@ body {
     margin-top: 0.25rem;
 }
 
-/* Plan content styling */
-.free-text {
-    color: var(--tabby-green);
-    font-weight: 600;
-}
-
-.paid-text {
-    color: var(--tabby-red);
-    font-weight: 600;
-}
-
-.basic-text {
-    color: var(--tabby-orange);
-    font-weight: 600;
-}
-
-.not-available-text {
-    color: var(--tabby-orange);
-    font-weight: 600;
-}
 
 /* Modal Styles */
 .modal {
@@ -578,6 +516,386 @@ body {
 
 .wiki-content p {
     margin-bottom: 1rem;
+}
+
+/* Filter Chips Styles */
+.filter-chips {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-chip {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--tabby-gray);
+    background: white;
+    color: var(--tabby-gray);
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.filter-chip:hover {
+    background: var(--tabby-light-gray);
+    border-color: var(--tabby-dark);
+}
+
+.filter-chip.active {
+    background: var(--tabby-gray);
+    color: white;
+    border-color: var(--tabby-gray);
+}
+
+.filter-chip.active:hover {
+    background: var(--tabby-dark);
+    border-color: var(--tabby-dark);
+}
+
+.reset-button {
+    padding: 0.75rem;
+    border: none;
+    background: transparent;
+    color: var(--tabby-gray);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+}
+
+.reset-button:hover {
+    color: var(--tabby-dark);
+    background: var(--tabby-light-gray);
+}
+
+/* Benefits Library Styles */
+.benefits-table-container {
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0;
+    overflow-x: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(19, 28, 38, 0.1);
+    display: inline-block;
+    width: auto;
+}
+
+.benefits-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.benefits-table th {
+    background: var(--tabby-gray);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.benefits-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--tabby-light-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.benefits-table td:nth-child(2) {
+    font-weight: bold !important;
+}
+
+.benefits-table tbody tr td:nth-child(2) {
+    font-weight: bold !important;
+}
+
+/* Add Benefit Button */
+.add-benefit-section {
+    margin: 1rem 0;
+}
+
+.add-benefit-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--tabby-gray);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.add-benefit-btn:hover {
+    background: var(--tabby-dark);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--tabby-light-gray);
+    background: linear-gradient(135deg, var(--tabby-pink-light) 0%, var(--tabby-violet) 100%);
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.benefit-form {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--tabby-dark);
+}
+
+.chip-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.form-chip {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--tabby-gray);
+    background: white;
+    color: var(--tabby-gray);
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.form-chip:hover {
+    background: var(--tabby-light-gray);
+    border-color: var(--tabby-dark);
+}
+
+.form-chip.active {
+    background: var(--tabby-gray);
+    color: white;
+    border-color: var(--tabby-gray);
+}
+
+.form-chip.active:hover {
+    background: var(--tabby-dark);
+    border-color: var(--tabby-dark);
+}
+
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--tabby-light-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--tabby-gray);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: white;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox-label:hover {
+    background: var(--tabby-light-gray);
+}
+
+.type-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--tabby-gray);
+    cursor: pointer;
+}
+
+.checkbox-text {
+    font-size: 1rem;
+    color: var(--tabby-dark);
+    font-weight: 500;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-cancel, .btn-save {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-cancel {
+    background: white;
+    color: var(--tabby-gray);
+    border: 2px solid var(--tabby-gray);
+}
+
+.btn-cancel:hover {
+    background: var(--tabby-light-gray);
+    border-color: var(--tabby-dark);
+}
+
+.btn-save {
+    background: var(--tabby-gray);
+    color: white;
+    border: 2px solid var(--tabby-gray);
+}
+
+.btn-save:hover {
+    background: var(--tabby-dark);
+    border-color: var(--tabby-dark);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: #fdf2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.benefits-table tr:hover {
+    background-color: var(--tabby-light-gray);
+}
+
+.benefits-table tr:last-child td {
+    border-bottom: none;
+}
+
+.page-header {
+    text-align: center;
+    margin: 3rem 0;
+    padding-top: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--tabby-dark);
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--tabby-gray);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Responsive Design */

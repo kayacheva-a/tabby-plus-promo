@@ -1,24 +1,26 @@
 console.log('Simple script loaded');
 
+let hiddenRowsUAE = [];
+let hiddenRowsKSA = [];
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, starting simple initialization');
     
     setTimeout(async () => {
         await loadAndPopulateTables();
         initializeHeroButtons();
-        initializeToggle();
     }, 200);
 });
 
 async function loadAndPopulateTables() {
     try {
         console.log('Loading UAE CSV...');
-        const responseUAE = await fetch('./comparison-uae.csv?v=6');
+        const responseUAE = await fetch('./comparison-uae.csv?v=5');
         const csvTextUAE = await responseUAE.text();
         console.log('UAE CSV loaded, length:', csvTextUAE.length);
         
         console.log('Loading KSA CSV...');
-        const responseKSA = await fetch('./comparison-ksa.csv?v=6');
+        const responseKSA = await fetch('./comparison-ksa.csv?v=5');
         const csvTextKSA = await responseKSA.text();
         console.log('KSA CSV loaded, length:', csvTextKSA.length);
         
@@ -102,22 +104,8 @@ function populateTable(country, data, tableBodyId) {
 
 function formatContent(content) {
     if (!content) return '';
-    
-    if (content.toLowerCase().includes('free')) {
-        return `<span class="free-text">${content} ✓</span>`;
-    } else if (content.toLowerCase().includes('paid')) {
-        return `<span class="paid-text">${content} ✗</span>`;
-    } else if (content.toLowerCase().includes('basic')) {
-        return `<span class="basic-text">${content}</span>`;
-    } else if (content.toLowerCase().includes('not available')) {
-        return `<span class="not-available-text">${content}</span>`;
-    }
-    
     return content;
 }
-
-let hiddenRowsUAE = [];
-let hiddenRowsKSA = [];
 
 function initializeToggle() {
     console.log('Initializing toggle...');

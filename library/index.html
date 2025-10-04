@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits Library - Tabby+ Vision</title>
+    <meta name="description" content="Comprehensive benefits library for Tabby+ subscription plans">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../promo/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>Tabby+ Vision</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="/promo" class="nav-link">Promo</a>
+                    <a href="/library" class="nav-link active">Library</a>
+                    <a href="/wiki" class="nav-link">Wiki</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1 class="page-title">Benefits Library</h1>
+            </header>
+
+            <div class="content-section">
+                <div class="filter-chips">
+                    <button class="filter-chip" data-filter="uae">UAE</button>
+                    <button class="filter-chip" data-filter="ksa">KSA</button>
+                    <button class="filter-chip" data-filter="tabbycard">Tabby Card</button>
+                    <button class="filter-chip" data-filter="bnpl">BNPL</button>
+                    <button class="reset-button" id="resetFilters" title="Reset all filters">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="add-benefit-section">
+                    <button class="add-benefit-btn" id="addBenefitBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                        Add Benefit
+                    </button>
+                </div>
+                <div class="benefits-container" id="benefitsContainer">
+                    <!-- Benefits content will be loaded dynamically from CSV -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Benefit Modal -->
+    <div class="modal-overlay" id="addBenefitModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Benefit</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            
+            <form class="benefit-form" id="benefitForm">
+                <div class="form-group">
+                    <label>Country *</label>
+                    <div class="chip-group">
+                        <button type="button" class="form-chip" data-value="UAE">UAE</button>
+                        <button type="button" class="form-chip" data-value="KSA">KSA</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Product *</label>
+                    <div class="chip-group">
+                        <button type="button" class="form-chip" data-value="Tabby Card">Tabby Card</button>
+                        <button type="button" class="form-chip" data-value="BNPL">BNPL</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Type</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="Deals" class="type-checkbox">
+                            <span class="checkbox-text">Deals</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="Debt management" class="type-checkbox">
+                            <span class="checkbox-text">Debt management</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="Expense tracking" class="type-checkbox">
+                            <span class="checkbox-text">Expense tracking</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="Security" class="type-checkbox">
+                            <span class="checkbox-text">Security</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feature">Feature *</label>
+                    <input type="text" id="feature" name="feature" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="freePlan">Free Plan *</label>
+                    <input type="text" id="freePlan" name="freePlan" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tabbyPlan">Tabby+ (AED 49/month) *</label>
+                    <input type="text" id="tabbyPlan" name="tabbyPlan" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" class="form-textarea" rows="4"></textarea>
+                </div>
+                
+                <div class="error-message" id="errorMessage"></div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn-save">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="library.js"></script>
+</body>
+</html>

@@ -1,12 +1,14 @@
 console.log('Simple script loaded');
 
+let hiddenRowsUAE = [];
+let hiddenRowsKSA = [];
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, starting simple initialization');
     
     setTimeout(async () => {
         await loadAndPopulateTables();
         initializeHeroButtons();
-        initializeToggle();
     }, 200);
 });
 
@@ -102,22 +104,8 @@ function populateTable(country, data, tableBodyId) {
 
 function formatContent(content) {
     if (!content) return '';
-    
-    if (content.toLowerCase().includes('free')) {
-        return `<span class="free-text">${content} ✓</span>`;
-    } else if (content.toLowerCase().includes('paid')) {
-        return `<span class="paid-text">${content} ✗</span>`;
-    } else if (content.toLowerCase().includes('basic')) {
-        return `<span class="basic-text">${content}</span>`;
-    } else if (content.toLowerCase().includes('not available')) {
-        return `<span class="not-available-text">${content}</span>`;
-    }
-    
     return content;
 }
-
-let hiddenRowsUAE = [];
-let hiddenRowsKSA = [];
 
 function initializeToggle() {
     console.log('Initializing toggle...');

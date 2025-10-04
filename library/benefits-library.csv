@@ -1,0 +1,8 @@
+Country,Product,Type,Features,Free Plan,Tabby+ (AED 49/month),Description
+"UAE, KSA","Tabby Card, BNPL",Deals,Sales Events Access,Standard access,Early access,"Mechants that participate in Tabby Day, Black Friday or any other sale open up/activate their deals earlier then the sale starts for Tabby+ subscribers only"
+"UAE, KSA","Tabby Card, BNPL",Deals,Exclusive deals,Limited,Full access,"Options: 1/ Exclusive deals for Tabby+ users, that do not exist for Free planners 2/ Increases discounts and rewards on the same offers for Tabby= subscribers on the same offers that exist for Free planners"
+"UAE, KSA","Tabby Card, BNPL",Debt management,Credit Score Reports,Not available,Advanced,"To build a creadit health or a credit score report we would need: 1/ Some kind of a credit score indicator in app and credit score dynamic indication 2/ On the report itself there are options: - display credit bureau report - display DBR changes - display repayments (inc overdue) impact on the score - display usage and utilisation impact No fraud and scoring rules might be covered in the report, obviously. "
+UAE,"Tabby Card, BNPL",Expence tracking,Expense Tracking,Basic,Advanced,"Options:  1/ Custom categories 2/ Custom categories expences tracking in pfm  3/ Custom categories and default categories limits and expences management"
+UAE,Tabby Card,"Security, Expence tracking",Virtual cards,Not available,Up to 2 cards,Create several virtual cards (with our without spending limit) to use online or add to the wallet. 
+"UAE, KSA","Tabby Card, BNPL",Security,Purchase protection,Not available,Icluded,
+UAE,Tabby Card,Expence tracking,Shared virtual cards,Not available,1 card,Create virtual card (with spending limit) to share with a family member. 
