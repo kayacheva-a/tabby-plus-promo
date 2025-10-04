@@ -414,7 +414,7 @@ async function updateCSVFile() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                csvContent: csvContent,
+                csvContent: btoa(csvContent), // Base64 encode to avoid JSON issues
                 fileName: 'benefits-library.csv'
             })
         });

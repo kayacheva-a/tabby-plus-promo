@@ -25,6 +25,9 @@ export default {
         return new Response('CSV content is required', { status: 400 });
       }
 
+      // Decode Base64 content
+      const decodedCsvContent = atob(csvContent);
+
       // GitHub API configuration
       const GITHUB_TOKEN = env.GITHUB_TOKEN;
       const GITHUB_OWNER = 'kayacheva-a';
@@ -60,7 +63,7 @@ export default {
           },
           body: JSON.stringify({
             message: `Update ${fileName} - Add new benefit`,
-            content: btoa(csvContent), // Base64 encode
+            content: btoa(decodedCsvContent), // Base64 encode the decoded content
             sha: sha, // Include SHA for updates
           }),
         }
