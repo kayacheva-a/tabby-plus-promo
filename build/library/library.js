@@ -372,9 +372,45 @@ function handleFormSubmission() {
     // Re-display table with filters applied
     applyFilters();
     
+    // Generate and download updated CSV
+    downloadUpdatedCSV();
+    
     // Close modal
     document.getElementById('addBenefitModal').classList.remove('active');
     resetForm();
     
     console.log('New benefit added:', newBenefit);
+}
+
+function downloadUpdatedCSV() {
+    // Create CSV content
+    const headers = ['Country', 'Product', 'Type', 'Features', 'Free Plan', 'Tabby+ (AED 49/month)', 'Description'];
+    let csvContent = headers.join(',') + '\n';
+    
+    allBenefitsData.forEach(row => {
+        const values = [
+            `"${row.country || ''}"`,
+            `"${row.product || ''}"`,
+            `"${row.type || ''}"`,
+            `"${row.features || ''}"`,
+            `"${row.freeplan || ''}"`,
+            `"${row['tabby+aed49/month'] || ''}"`,
+            `"${row.description || ''}"`
+        ];
+        csvContent += values.join(',') + '\n';
+    });
+    
+    // Create and download file
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'benefits-library-updated.csv');
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show success message
+    alert('✅ New benefit added! Download the updated CSV file and replace the original benefits-library.csv file to make it permanent.');
 }
