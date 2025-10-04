@@ -407,28 +407,42 @@ async function updateCSVFile() {
             csvContent += values.join(',') + '\n';
         });
 
-        // Call GitHub API via Cloudflare Worker
-        const response = await fetch('https://tabby-csv-updater.anastasiia-kaiacheva.workers.dev/', {
+        // Get GitHub token from localStorage or prompt user
+        let githubToken = localStorage.getItem('githubToken');
+        if (!githubToken) {
+            githubToken = prompt('Please enter your GitHub token (starts with github_pat_):');
+            if (githubToken) {
+                localStorage.setItem('githubToken', githubToken);
+            } else {
+                throw new Error('GitHub token is required to update CSV files');
+            }
+        }
+
+        // Call GitHub API to trigger workflow
+        const response = await fetch('https://api.github.com/repos/kayacheva-a/tabby-plus-promo/dispatches', {
             method: 'POST',
             headers: {
+                'Authorization': 'token ' + githubToken,
+                'Accept': 'application/vnd.github.v3+json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                csvContent: btoa(csvContent), // Base64 encode to avoid JSON issues
-                fileName: 'benefits-library.csv'
+                event_type: 'update-csv',
+                client_payload: {
+                    csvContent: csvContent
+                }
             })
         });
 
-        const result = await response.json();
-
-        if (response.ok && result.success) {
+        if (response.ok) {
             // Success - show message and reload page after delay
             alert('✅ Benefit added successfully! The CSV file has been updated and will be live shortly.');
             setTimeout(() => {
                 window.location.reload();
-            }, 2000);
+            }, 3000); // Give more time for GitHub Action to complete
         } else {
-            throw new Error(result.error || 'Failed to update CSV file');
+            const result = await response.json();
+            throw new Error(result.message || 'Failed to update CSV file');
         }
 
     } catch (error) {

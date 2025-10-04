@@ -1,0 +1,26 @@
+name: Update Benefits CSV
+
+on:
+  repository_dispatch:
+    types: [update-csv]
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Update CSV file
+      run: |
+        echo "${{ github.event.client_payload.csvContent }}" > promo/benefits-library.csv
+        echo "${{ github.event.client_payload.csvContent }}" > library/benefits-library.csv
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add promo/benefits-library.csv library/benefits-library.csv
+        git commit -m "Update benefits library CSV - Add new benefit"
+        git push
