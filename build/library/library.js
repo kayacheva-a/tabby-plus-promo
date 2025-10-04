@@ -372,8 +372,8 @@ function handleFormSubmission() {
     // Re-display table with filters applied
     applyFilters();
     
-    // Generate and download updated CSV
-    downloadUpdatedCSV();
+    // Update CSV file via GitHub API
+    await updateCSVFile();
     
     // Close modal
     document.getElementById('addBenefitModal').classList.remove('active');
@@ -382,35 +382,62 @@ function handleFormSubmission() {
     console.log('New benefit added:', newBenefit);
 }
 
-function downloadUpdatedCSV() {
-    // Create CSV content
-    const headers = ['Country', 'Product', 'Type', 'Features', 'Free Plan', 'Tabby+ (AED 49/month)', 'Description'];
-    let csvContent = headers.join(',') + '\n';
-    
-    allBenefitsData.forEach(row => {
-        const values = [
-            `"${row.country || ''}"`,
-            `"${row.product || ''}"`,
-            `"${row.type || ''}"`,
-            `"${row.features || ''}"`,
-            `"${row.freeplan || ''}"`,
-            `"${row['tabby+aed49/month'] || ''}"`,
-            `"${row.description || ''}"`
-        ];
-        csvContent += values.join(',') + '\n';
-    });
-    
-    // Create and download file
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'benefits-library-updated.csv');
-    link.style.visibility = 'hidden';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    // Show success message
-    alert('✅ New benefit added! Download the updated CSV file and replace the original benefits-library.csv file to make it permanent.');
+async function updateCSVFile() {
+    try {
+        // Show loading state
+        const saveButton = document.querySelector('.btn-save');
+        const originalText = saveButton.textContent;
+        saveButton.textContent = 'Saving...';
+        saveButton.disabled = true;
+
+        // Create CSV content
+        const headers = ['Country', 'Product', 'Type', 'Features', 'Free Plan', 'Tabby+ (AED 49/month)', 'Description'];
+        let csvContent = headers.join(',') + '\n';
+        
+        allBenefitsData.forEach(row => {
+            const values = [
+                `"${row.country || ''}"`,
+                `"${row.product || ''}"`,
+                `"${row.type || ''}"`,
+                `"${row.features || ''}"`,
+                `"${row.freeplan || ''}"`,
+                `"${row['tabby+aed49/month'] || ''}"`,
+                `"${row.description || ''}"`
+            ];
+            csvContent += values.join(',') + '\n';
+        });
+
+        // Call GitHub API via Cloudflare Worker
+        const response = await fetch('https://tabby-csv-updater.kayacheva-a.workers.dev/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                csvContent: csvContent,
+                fileName: 'benefits-library.csv'
+            })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            // Success - show message and reload page after delay
+            alert('✅ Benefit added successfully! The CSV file has been updated and will be live shortly.');
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
+        } else {
+            throw new Error(result.error || 'Failed to update CSV file');
+        }
+
+    } catch (error) {
+        console.error('Error updating CSV:', error);
+        alert('❌ Failed to save benefit: ' + error.message + '\n\nPlease try again or contact support.');
+        
+        // Reset button state
+        const saveButton = document.querySelector('.btn-save');
+        saveButton.textContent = 'Save';
+        saveButton.disabled = false;
+    }
 }
