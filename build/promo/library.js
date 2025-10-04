@@ -346,7 +346,7 @@ function showError(errors) {
     }
 }
 
-function handleFormSubmission() {
+async function handleFormSubmission() {
     const formData = getFormData();
     const errors = validateForm(formData);
     
