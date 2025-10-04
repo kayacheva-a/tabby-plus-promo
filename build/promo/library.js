@@ -317,6 +317,16 @@ function getFormData() {
     const tabbyPlan = document.getElementById('tabbyPlan').value.trim();
     const description = document.getElementById('description').value.trim();
     
+    console.log('Form data collected:', {
+        country,
+        product,
+        type,
+        feature,
+        freePlan,
+        tabbyPlan,
+        description
+    });
+    
     return {
         country,
         product,
@@ -347,8 +357,12 @@ function showError(errors) {
 }
 
 async function handleFormSubmission() {
+    console.log('Form submission started...');
     const formData = getFormData();
+    console.log('Form data retrieved:', formData);
+    
     const errors = validateForm(formData);
+    console.log('Validation errors:', errors);
     
     if (errors.length > 0) {
         showError(errors);
@@ -419,6 +433,7 @@ async function updateCSVFile() {
         }
 
         // Call GitHub API to trigger workflow
+        console.log('Calling GitHub API with CSV content length:', csvContent.length);
         const response = await fetch('https://api.github.com/repos/kayacheva-a/tabby-plus-promo/dispatches', {
             method: 'POST',
             headers: {
@@ -433,6 +448,8 @@ async function updateCSVFile() {
                 }
             })
         });
+        
+        console.log('GitHub API response status:', response.status);
 
         if (response.ok) {
             // Success - show message and reload page after delay
