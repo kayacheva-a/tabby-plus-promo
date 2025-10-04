@@ -244,8 +244,18 @@ function initializeAddBenefitModal() {
         console.log('Save button found, adding click event listener');
         saveBtn.addEventListener('click', function(e) {
             console.log('Save button clicked!');
+            alert('Save button clicked!'); // Simple test
             e.preventDefault();
-            handleFormSubmission();
+            try {
+                handleFormSubmission();
+            } catch (error) {
+                console.error('Error in handleFormSubmission:', error);
+            }
+        });
+        
+        // Test if button is clickable
+        saveBtn.addEventListener('mousedown', function() {
+            console.log('Save button mousedown detected');
         });
     } else {
         console.error('Save button not found!');
