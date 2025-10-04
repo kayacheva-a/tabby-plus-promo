@@ -187,6 +187,13 @@ function initializeAddBenefitModal() {
     const cancelBtn = document.getElementById('cancelBtn');
     const form = document.getElementById('benefitForm');
     
+    console.log('Modal elements found:', {
+        modal: !!modal,
+        closeBtn: !!closeBtn,
+        cancelBtn: !!cancelBtn,
+        form: !!form
+    });
+    
     // Open modal
     if (addBtn) {
         addBtn.addEventListener('click', function() {
@@ -221,10 +228,27 @@ function initializeAddBenefitModal() {
     
     // Handle form submission
     if (form) {
+        console.log('Form found, adding submit event listener');
         form.addEventListener('submit', function(e) {
+            console.log('Form submit event triggered!');
             e.preventDefault();
             handleFormSubmission();
         });
+    } else {
+        console.error('Form not found! Cannot add submit event listener');
+    }
+    
+    // Also add click listener to Save button as backup
+    const saveBtn = document.querySelector('.btn-save');
+    if (saveBtn) {
+        console.log('Save button found, adding click event listener');
+        saveBtn.addEventListener('click', function(e) {
+            console.log('Save button clicked!');
+            e.preventDefault();
+            handleFormSubmission();
+        });
+    } else {
+        console.error('Save button not found!');
     }
 }
 
